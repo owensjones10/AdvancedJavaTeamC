@@ -32,10 +32,6 @@ Our goal is to create JavaFX GUI components for the following database tables:
 AdvancedJavaTeamC/
  ┣ db/              → SQL scripts (schema.sql, load.sql)
  ┣ src/             → Java source files
- ┃ ┗ edu/
- ┃   ┗ easternflorida/
- ┃     ┗ joneso/   → main package (each teammate adds their own)
- ┣ docs/            → planning files (team-plan.md, diagrams)
  ┣ README.md
  ┗ .gitignore
 
@@ -43,7 +39,7 @@ AdvancedJavaTeamC/
 
 ## ⚙️ Setup
 1. Clone repo  
-2. Open in NetBeans or IntelliJ  
+2. Open using the commands in the README.md file under the directory "db"
 3. Use Java SE 22 and Apache Derby (JavaDB)  
 4. Run scripts in `db/` folder using `ij`
 
@@ -51,3 +47,12 @@ AdvancedJavaTeamC/
 
 ## 🧭 Progress Tracking
 See [docs/team-plan.md](docs/team-plan.md) for weekly tasks, deadlines, and team check-ins.
+
+---
+
+## 🔧 Contributing
+1. Create a branch named after your task, e.g., `feature-part-table`  
+2. Commit changes with clear messages  
+3. Open a Pull Request for review before merging  
+4. Use the GitHub Issues tab to log bugs or enhancement requests
+
