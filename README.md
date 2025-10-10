@@ -22,7 +22,7 @@ Our goal is to create JavaFX GUI components for the following database tables:
 |---------|----------------|--------|-------|
 | Owen Jones | Task | ⏳ Not Started | Leads integration and main UI |
 | Ben Kosin | Task | ⏳ Not Started |  |
-| Brooks Ward | Task | ⏳ Not Started |  |
+| Brooks Ward | Part Table | ⏳ Not Started |  |
 | Isabel Martinez | Task | ⏳ Not Started |  |
 | Ajani Wilson | Task | ⏳ Not Started |  |
 
