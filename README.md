@@ -21,10 +21,10 @@ Our goal is to create JavaFX GUI components for the following database tables:
 | Member | Assigned Table | Status | Notes |
 |---------|----------------|--------|-------|
 | Owen Jones | Task | ⏳ Not Started | Leads integration and main UI |
-| Ben Kosin | Task | ⏳ Not Started |  |
+| Ben Kosin | Orders table | ⏳ Not Started |  |
 | Brooks Ward | Part Table | ⏳ Not Started |  |
-| Isabel Martinez | Task | ⏳ Not Started |  |
-| Ajani Wilson | Task | ⏳ Not Started |  |
+| Isabel Martinez | Customer table | ⏳ Not Started |  |
+| Ajani Wilson | PartSupp | ⏳ Not Started |  |
 
 ---
 
