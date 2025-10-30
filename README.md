@@ -1,58 +1,156 @@
-# Advanced Java Team C – Fall 2025
-### TPC-H Performance Benchmark (GUI Development)
+# ✅ Quick Start Summary
+Clone or unzip the project and change the hardcoded file location in load.sql to yours and then run these commands:
+```bash
+# Start the Derby database
+java -jar "$DERBY_HOME/lib/derbyrun.jar" server start
 
-**Team Leader:** Owen Jones  
-**Team Members:** Ben Kosin, Brooks Ward, Isabel Martinez, Ajani Wilson
-
----
-
-## 📘 Project Overview
-This repository contains the source code and SQL scripts for Team C’s portion of the Advanced Java TPC-H Performance Benchmark project.  
-Our goal is to create JavaFX GUI components for the following database tables:
-
-- `Part`
-- `PartSupp`
-- `Customer`
-- `Orders`
+# launch the app
+javafx:run
+```
 
 ---
 
 ## 🧩 Responsibilities
-| Member | Assigned Table | Status | Notes |
-|---------|----------------|--------|-------|
-| Owen Jones | Task | ⏳ Not Started | Leads integration and main UI |
-| Ben Kosin | Orders table | ⏳ Not Started |  |
-| Brooks Ward | Part Table | ⏳ Not Started |  |
-| Isabel Martinez | Customer table | ⏳ Not Started |  |
-| Ajani Wilson | PartSupp | ⏳ Not Started |  |
+| Member | Assigned Table | Status |
+|---------|----------------|--------|
+| Owen Jones | Integration/Main UI | ⏳ Started | 
+| Ben Kosin | Orders table | ⏳ Started |  
+| Brooks Ward | Part Table | ✅ Done |  
+| Isabel Martinez | Customer table | ✅ Done |  
+| Ajani Wilson | PartSupp | ⏳ Started |  
 
 ---
 
-## 🗂️ Repository Structure
+# 🧠 Advanced Java Team C — TPC-H Database Application
+
+This project is a **JavaFX + Apache Derby** database application built for the *Advanced Java (COP2805)* course.  
+It demonstrates reading and inserting data into tables (`Customer`, `Part`, etc.) from the **TPC-H** benchmark schema.
+
+---
+
+## 📦 Project Overview
+
+This application connects to a **JavaDB (Apache Derby)** database named `tpchdb` and provides a JavaFX interface to view and insert records.
+
+The project is modular and uses **Maven** for dependency management.  
+Each contributor has their code organized under their own package.
+
+```yaml
+---
+
+## 🚀 Features
+
+- JavaFX user interface with buttons to open individual table windows  
+- `Customer` and `Part` table viewers with live data from the Derby database  
+- Insert dialogs for adding new records  
+- Modular Maven setup for easy dependency management and expansion  
+
+---
+
+## ⚙️ Prerequisites
+
+Make sure you have the following installed:
+
+| Tool | Version | Check Command |
+|------|----------|----------------|
+| Java JDK | 22 or newer | `java -version` |
+| Maven | 3.8 or newer | `mvn -version` |
+| Apache Derby | (included with JDK or downloadable) | `echo $DERBY_HOME` |
+
+---
+
+## 🏗️ Database Setup (JavaDB / Apache Derby)
+
+Before running the app, you must start the Derby network server and create the database.
+```
+
+### macOS / Linux (bash)
+```bash
+# 1. Start the Derby server
+java -jar "$DERBY_HOME/lib/derbyrun.jar" server start &
+
+# 2. Open ij tool
+java -jar "$DERBY_HOME/lib/derbyrun.jar" ij
+
+# 3. Inside ij, run the following:
+CONNECT 'jdbc:derby://localhost:1527/tpchdb;create=true;user=app;password=app';
+
+# 4. Create tables
+RUN 'db/schema.sql';
+
+# 5. Load data
+RUN 'db/load.sql';
+
+# 6. Exit ij
+exit;
+```
+
+```powershell
+Windows (Command Prompt)
+REM 1. Start the Derby server
+java -jar "%DERBY_HOME%\lib\derbyrun.jar" server start
+
+REM 2. Open ij tool
+java -jar "%DERBY_HOME%\lib\derbyrun.jar" ij
+
+REM 3. Inside ij, run the following:
+CONNECT 'jdbc:derby://localhost:1527/tpchdb;create=true;user=app;password=app';
+
+REM 4. Create tables
+RUN 'db/schema.sql';
+
+REM 5. Load data
+RUN 'db/load.sql';
+
+REM 6. Exit ij
+exit;
+```
+
+# 🧰 Building and Running the Application
+
+## 🧱 Compile the project
+
+```bash
+mvn clean compile
+```
+## ▶️ Run the JavaFX application
+```bash
+mvn javafx:run
+```
+
+## 🧭 Application Navigation
+
+When launched, the Main Menu window appears:
+
+View Customers → Opens the Customer table viewer
+
+View Parts → Opens the Part table viewer
+
+Each table window supports viewing existing records and inserting new ones.
+
+## 🧩 Technologies Used
+
+JavaFX 23 — GUI framework
+
+Apache Derby (JavaDB) — Database engine
+
+Maven — Build and dependency management
+
+Java 22 — Core language and modules
+
+## 📁 Repository Layout
+
+```
 AdvancedJavaTeamC/
- ┣ db/              → SQL scripts (schema.sql, load.sql)
- ┣ src/             → Java source files
- ┣ README.md
- ┗ .gitignore
-
----
-
-## ⚙️ Setup
-1. Clone repo  
-2. Open using the commands in the README.md file under the directory "db"
-3. Use Java SE 22 and Apache Derby (JavaDB)  
-4. Run scripts in `db/` folder using `ij`
-
----
-
-## 🧭 Progress Tracking
-See [docs/team-plan.md](docs/team-plan.md) for weekly tasks, deadlines, and team check-ins.
-
----
-
-## 🔧 Contributing
-1. Create a branch named after your task, e.g., `feature-part-table`  
-2. Commit changes with clear messages  
-3. Open a Pull Request for review before merging  
-4. Use the GitHub Issues tab to log bugs or enhancement requests
-
+├── db/
+│   ├── schema.sql        # Creates all tables
+│   ├── load.sql          # Loads data from .tbl files
+│   └── tpch_data/        # Dataset files (.tbl)
+├── src/
+│   └── main/java/edu/easternflorida/
+│       ├── joneso/       # Main menu (MainMenu.java)
+│       ├── martinezi/    # Customer TableView app
+│       └── wardb/        # Part TableView app
+├── pom.xml               # Maven project descriptor
+└── README.md             # Project documentation
+```
