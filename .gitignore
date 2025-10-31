@@ -24,3 +24,5 @@ replay_pid*
 db/tpch_data/*.tbl
 db/tpch_data/
 *.zip
+db/tpchdb/
+derby.log
