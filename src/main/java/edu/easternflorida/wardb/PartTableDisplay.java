@@ -69,7 +69,7 @@ public class PartTableDisplay extends Application {
         try (Connection conn = DriverManager.getConnection(
                 "jdbc:derby://localhost:1527/tpchdb;user=app;password=app");
              Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery("SELECT * FROM PART FETCH FIRST 100 ROWS ONLY")) {
+             ResultSet rs = stmt.executeQuery("SELECT * FROM PART")) {
 
             while (rs.next()) {
                 parts.add(new Part(

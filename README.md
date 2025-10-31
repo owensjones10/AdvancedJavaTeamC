@@ -5,7 +5,7 @@ Clone or unzip the project and change the hardcoded file location in load.sql to
 java -jar "$DERBY_HOME/lib/derbyrun.jar" server start
 
 # launch the app
-javafx:run
+mvn javafx:run
 ```
 
 ---

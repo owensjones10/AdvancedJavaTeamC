@@ -1,16 +1,26 @@
-# Compiled class file
+# =========================
+# Java / Maven / JavaFX Project Ignore File
+# =========================
+
+# --- Build & IDE ---
+target/
+out/
+bin/
+build/
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Compiled / Generated ---
 *.class
-
-# Log file
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
 *.jar
 *.war
 *.nar
@@ -18,11 +28,31 @@
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# --- Logs & Temp ---
+*.log
+*.tmp
 hs_err_pid*
 replay_pid*
-db/tpch_data/*.tbl
-db/tpch_data/
-*.zip
+
+# --- Derby Database ---
 db/tpchdb/
 derby.log
+
+# --- TPC-H Raw Data ---
+db/tpch_data/
+db/tpch_data/*.tbl
+
+# --- Archive / Backups ---
+*.zip
+*.7z
+*.gz
+
+# --- Misc Tools ---
+.mtj.tmp/
+*.ctxt
+
+# --- Maven Wrapper (if you use your local mvn install) ---
+!mvnw
+!mvnw.cmd
+!.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.properties

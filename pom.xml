@@ -39,7 +39,7 @@
             <version>${javafx.version}</version>
         </dependency>
 
-        <!-- Apache Derby Client for Network DB Connection -->
+        <!-- Derby Client for Network DB Connection -->
         <dependency>
             <groupId>org.apache.derby</groupId>
             <artifactId>derbyclient</artifactId>
@@ -47,10 +47,10 @@
         </dependency>
     </dependencies>
 
-    <!-- Build and Plugins -->
+    <!-- Plugins -->
     <build>
         <plugins>
-            <!-- Maven Compiler Plugin -->
+            <!-- Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -60,17 +60,29 @@
                 </configuration>
             </plugin>
 
-            <!-- JavaFX Maven Plugin (Run with mvn javafx:run) -->
+            <!-- JavaFX Maven Plugin -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <configuration>
-                    <!-- Set the JavaFX modules used by your project -->
                     <mainClass>edu.easternflorida.joneso.MainMenu</mainClass>
-                    <jvmArgs>
-                        --add-modules=javafx.controls,javafx.fxml,java.sql
-                    </jvmArgs>
+                </configuration>
+            </plugin>
+
+            <!-- JAR Manifest Configuration -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>edu.easternflorida.joneso.MainMenu</mainClass>
+                        </manifest>
+                    </archive>
                 </configuration>
             </plugin>
         </plugins>
