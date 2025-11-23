@@ -2,7 +2,7 @@
 Clone or unzip the project and change the hardcoded file location in load.sql to yours and then run these commands:
 ```bash
 # Start the Derby database
-java -jar "$DERBY_HOME/lib/derbyrun.jar" server start
+/opt/homebrew/Cellar/derby/10.17.1.0/bin/startNetworkServer
 
 # launch the app
 mvn javafx:run
