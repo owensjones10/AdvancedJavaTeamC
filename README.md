@@ -13,11 +13,11 @@ mvn javafx:run
 ## 🧩 Responsibilities
 | Member | Assigned Table | Status |
 |---------|----------------|--------|
-| Owen Jones | Integration/Main UI | ⏳ Started | 
-| Ben Kosin | Orders table | ⏳ Started |  
+| Owen Jones | Integration/Main UI | ✅ Done | 
+| Ben Kosin | Orders table | ✅ Done |  
 | Brooks Ward | Part Table | ✅ Done |  
 | Isabel Martinez | Customer table | ✅ Done |  
-| Ajani Wilson | PartSupp | ⏳ Started |  
+| Ajani Wilson | PartSupp | ✅ Done |  
 
 ---
 
